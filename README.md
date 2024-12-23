@@ -1,2 +1,2 @@
-# feed-clear
-Let's make recommendation better 
+# clear
+Let's make recommendations better 
