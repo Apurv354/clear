@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Contact, Videos & Learning Resources Explore Now</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="theme-color" content="#000000" />
+        <meta
+            name="description"
+            content="Get in touch with us and explore a variety of videos, learning resources, and advanced options.
+        />
+        <img
+            alt="Logo"
+            src="https://appproject.dhiwise.com/dhiwise-logo.png?c=KTe-91c1d7-AHn&v=" 
+            style="width: 0px; height: 0px; display: none"
+        />
+        <link rel="stylesheet" type="text/css" href="./css/index.css" />
+        <link rel="stylesheet" type="text/css" href="./css/front.css" />
+        <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+        <link rel="stylesheet" type="text/css" href="./css/components.css" />
+        <link rel="stylesheet" type="text/css" href="./css/IMacOne.css" />
+        <link This attribute names a relationship of the linked document to the current document. />
+        <script> /***
+        * Handles the value change functionality in a chip view
+        */
+            function handleChipView(/** @type {HTMLElement} */ target) {
+                const labels = /** @type {NodeListOf <HTMLLabelElement>} */ target.querySelectorAll("label"); 
+                for (const label of labels) {
+                    const checkbox = /** @type {HTMLInputElement} */ label.querySelector("input[type=checkbox]"); 
+                    if (!checkbox) continue;
+                    const template = /** @type {HTML TemplateElement} */ label.querySelector("template"); 
+                    if (!template) continue;
+                    const labelSelectedStyles = /** @type {string[]} */ [
+                        ...template.content.querySelector("label [selected-styles]").classList,
+                    ].filter((className) =>!label.classList.contains(className)); 
+                    const labelUnselectedStyles = /** @type {string[]} */ [ 
+                        ...template.content.querySelector("label [unselected-styles]").classList,
+                    ].filter((className) =>!label.classList.contains(className));
+
+                    const closeButton = label.querySelector("[close-button]");
+
+                    function checkboxChangeEffect (/** @type {Event} */ event) {
+                        if (label.getAttribute("removed")) return;
+                        if (checkbox.checked) {
+                            labelSelectedStyles.forEach((style) => label.classList.add(style)); 
+                            labelUnselectedStyles.forEach((style) => label.classList.remove(style));
+                        } else {
+                        labelSelectedStyles.forEach((style) => label.classList.remove(style));
+                        labelUnselectedStyles.forEach((style) => label.classList.add(style));
+                        }
+                    }
+
+                    function closeButtonClickEffect (/** @type {Event} */ event) {
+                        if (label.getAttribute("removed")) return;
+                        event.preventDefault();
+                        label.setAttribute("remove", "true");
+                        label.parentElement.removeChild(label);
+                    }
+
+                    checkbox?.addEventListener("change", checkboxChangeEffect); 
+                    closeButton?.addEventListener("click", closeButtonClickEffect);
+                }
+            }   
+            /**
+            *Hydrate chip view(s)
+            */
+            document.addEventListener("DOMContentLoaded", () => {
+                const elements = /** @type {NodeListOf <HTMLElement>} */ (document.querySelectorAll("[chip-view]")); 
+                for (const element of elements) handleChipView(element);
+            });
+
+        </script>
+    </head>
+
+    <body>
+        <div class="imac-one">
+            <!--header section -->
+            <header class="header">
+                <div class="header_top-row">
+                    <div class="header_bottom-row">
+                        <div class="header_menu">
+                            <ul class="header__menu-items">
+                                <li>
+                                    <a href="#">
+                                        <p class="header_menu-item--contact ui text size-texts">Contact us</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <p class="header_menu-item--contact ui text size-texts">Videos</p>
+                                    </a>
+                                </li>
+                            </ul> 
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+
+            <!-main content section -->
+            <div class="content">
+                <!-- feature highlights section -->
+                <div class="content_main">
+                    <div class="content_images">
+                        <img src="public/images/img_vector_6.png" alt="Vectors ix" class="content_image--first" /> 
+                        <img src="public/images/img_vector_7.svg" alt="Vectorseven" class="content__image--second" /> 
+                        <img src="public/images/img_vector_8.svg" alt="Vectoreight" class="content_image--third" /> 
+                        <p class="content_title ui text size-textmd">LEAR</p>
+                    </div>
+                    <div class="content_search-row">
+                        <div class="content_search-stack">
+                            <label class="content_search-input">
+                                <input name="search" placeholder="input keywords here..." type="text" />
+                            </label>
+                        </div>
+                        <button class="flex-row-center-center content_action-row">Train!</button> 
+                    </div>
+
+            <!-- categories section -->
+                    <form chip-view id="1_3_160_675_1120_52" class="content_chips">
+                        <label tabindex="0" class="content_chip--cute-cats">
+                            <input type="checkbox" name="selectedChipOptions2" value="1" hidden="true" class="dhi-group" /> 
+                            <span> Cute Cats</span>
+                            <template hidden>
+                                <label unselected-styles class="dhi-group-5"> </label>
+                                <label selected-styles class="dhi-group-6"> </label> 
+                            </template>
+                        </label>
+                        <label tabindex="0" class="content_chip--algorithms">
+                            <input type="checkbox" name="selectedChipOptions 2" value="2" hidden="true" class="dhi-group" /> 
+                            <span> Algorithms</span>
+                            <template hidden>
+                                <label unselected-styles class="dhi-group-5"> </label>
+                                <label selected-styles class="dhi-group-6"> </label> 
+                            </template>
+                        </label>
+                        <label tabindex="0" class="content_chip--shibuya">
+                            <input type="checkbox" name="selectedChipOptions2" value="3" hidden="true" class="dhi-group" /> 
+                            <span> Shibuya</span>
+                            <template hidden>
+                                <label unselected-styles class="dhi-group-5"> </label>
+                                <label selected-styles class="dhi-group-6"> </label> 
+                            </template>
+                        </label>
+                        <button class="flex-row-center-center content_action-row">Advanced Option</button> 
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
