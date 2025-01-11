@@ -38,4 +38,7 @@ If you put those city names then you'll get following result.
 "Tokyo": {"temp": 10, "condition": "Sunny"},
 "London": {"temp": 7, "condition": "Rainy"}
 
+What you did is requesting information to our flask app and got response.
+I guess we're going to implement a request for youtube information from frontend to our server, and receiving the request and sending response.
+
 Press `ctrl+c` to quit.
