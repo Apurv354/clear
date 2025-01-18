@@ -2,6 +2,7 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
+
 # Specify the scopes your app needs (read and write permissions)
 SCOPES = [
     "https://www.googleapis.com/auth/youtube.readonly",
