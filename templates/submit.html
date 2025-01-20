@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clear Testing 20250115</title>
+</head>
+<body>
+    <h1>Clear Testing 20250115</h1>
+    <p>Hello, this is a testing version of CLEAR.</p>  <!-- This is the new line of explanation -->
+    <p>It will help you train your youtube by liking videos on youtube.</p> 
+    <p>Please provide us with the keyword you want to search,</p> 
+    <p>and the number of videos you want to click like on.</p> 
+    <p>Please notice  do not enter a number over 100 right now.</p> 
+    <p>Example: Providing the key word calculus and number of videos as 5,</p> 
+    <p>then the top 5 videos searched under keyword calculus will be liked.</p> 
+    <form action="/submit" method="POST">
+        <label for="query">Please enter your keyword here:</label>
+        <input type="text" id="query" name="query" required><br><br>
+        <label for="num_videos">Please enter the number of videos you want to click like:</label>
+        <input type="number" id="num_videos" name="num_videos" min="1" max="50" required><br><br>
+        <input type="submit" value="Start Training">
+    </form>    
+</body>
+</html>
+
