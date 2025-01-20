@@ -61,6 +61,6 @@ def like_video(credentials, video_id):
     youtube.videos().rate(id=video_id, rating="like").execute()
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', debug=True)
 
 
